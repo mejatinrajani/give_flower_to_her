@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="content">
+        <div class="image">
+            <img src="https://media1.tenor.com/m/DqeQCAMjhO0AAAAC/cartoon-what.gif" height="300px" width="300px" alt="Cartoon Image">
+            <p>Kabhi Kisine Phool Diya hai Tumhe?</p>
+        </div>
+        <div class="button-container">
+            <a href="" class="button-link">HAAN</a>
+            <a href="nahi.html" class="button-link">NAHI</a>
+        </div>
+    </div>
+    <p id="asterisk-text">*HAAN, ka jawab nahi hai mere pass, don't worry figure out kar loonga*</p>
+
+    <script>
+        const haanButton = document.querySelector('.button-container a:first-child');
+        
+        function moveButton() {
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            const buttonWidth = haanButton.offsetWidth;
+            const buttonHeight = haanButton.offsetHeight;
+
+            const newLeft = Math.random() * (viewportWidth - buttonWidth - 100) + 50;  
+            const newTop = Math.random() * (viewportHeight - buttonHeight - 100) + 50; 
+
+            haanButton.style.position = 'fixed'; 
+            haanButton.style.left = `${newLeft}px`;
+            haanButton.style.top = `${newTop}px`;
+        }
+
+        haanButton.addEventListener('mouseenter', moveButton);
+    </script>
+</body>
+</html>
