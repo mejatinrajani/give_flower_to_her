@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    color: #333;
+}
+
+.content {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+    gap: 20px; /* Space between elements */
+}
+
+.centered-image {
+    transition: transform 0.5s ease;
+    margin-bottom: 10%;
+}
+
+.centered-image:hover {
+    transform: rotate(20deg) scale(1.1); /* Tilt and scale image on hover */
+}
+
+/* Glowing text effect */
+p {
+    font-size: 30px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 4px 10px rgba(0, 255, 255, 0.5);
+    animation: glow 2s infinite alternate;
+}
+
+/* Glowing text animation */
+@keyframes glow {
+    0% { text-shadow: 0 4px 10px rgba(0, 255, 255, 0.5); }
+    100% { text-shadow: 0 4px 20px rgba(0, 255, 255, 1); }
+}
+
+/* Next button styling */
+.next-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #ff6f91;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.next-button:hover {
+    transform: scale(1.1);
+    background-color: #ff4b69;
+}
+
+/* Dynamic Bubble Styling */
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: rise 10s infinite ease-in-out;
+}
+
+/* Bubble Animation */
+@keyframes rise {
+    0% {
+        transform: translateY(100vh) scale(0.7);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Customizing Bubbles */
+.bubble:nth-child(1) {
+    width: 120px;
+    height: 120px;
+    left: 5%;
+    animation-duration: 14s;
+}
+
+.bubble:nth-child(2) {
+    width: 90px;
+    height: 90px;
+    left: 30%;
+    animation-duration: 16s;
+}
+
+.bubble:nth-child(3) {
+    width: 140px;
+    height: 140px;
+    left: 60%;
+    animation-duration: 10s;
+}
+
+.bubble:nth-child(4) {
+    width: 70px;
+    height: 70px;
+    left: 80%;
+    animation-duration: 12s;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    .centered-image {
+        width: 200px;
+        height: 200px;
+    }
+    p {
+        font-size: 18px;
+    }
+    .next-button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
