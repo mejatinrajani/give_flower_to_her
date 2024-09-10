@@ -3,35 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eye-Catching Glassmorphism & Dynamic Bubbles</title>
-    <link rel="stylesheet" href="sad.css">
+    <title>Eye-Catching Glassmorphism & Dynamic Heart Break Emojis</title>
+    <link rel="stylesheet" href="sad2.css">
 </head>
 <body>
     <div class="content">
-        <img src="https://media.tenor.com/xSdP8nYROncAAAAi/milk-and-mocha-crying.gif" alt="Centered Image" class="centered-image">
+        <img src="https://media.tenor.com/xSdP8nYROncAAAAi/milk-and-mocha-crying.gif" height="300px" width="300px" alt="Centered Image" class="centered-image">
         <p>Toot Gaya Bhai mai toh....</p>
         <a href="sad3.html"><button class="next-button">Next</button></a>
     </div>
 
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
-    <div class="bubble"></div>
+    <!-- Empty divs for dynamically added emojis -->
+    <div class="heart-break"></div>
+    <div class="heart-break"></div>
+    <div class="heart-break"></div>
+    <div class="heart-break"></div>
 
     <script>
-        // Generate more bubbles dynamically using JavaScript
-        const totalBubbles = 10; // More bubbles for extra effect
-        for (let i = 0; i < totalBubbles; i++) {
-            let bubble = document.createElement("div");
-            bubble.classList.add("bubble");
-            document.body.appendChild(bubble);
+        // Generate heart break emojis dynamically using JavaScript
+        const totalHearts = 28; 
+        for (let i = 0; i < totalHearts; i++) {
+            let heart = document.createElement("div");
+            heart.classList.add("heart-break");
+            heart.innerText = "💔"; 
+            document.body.appendChild(heart);
 
-            // Randomize bubble size, position, and speed
+            // Randomize emoji size, position, and speed
             let size = Math.random() * 100 + 50;
-            bubble.style.width = size + "px";
-            bubble.style.height = size + "px";
-            bubble.style.left = Math.random() * 100 + "%";
-            bubble.style.animationDuration = Math.random() * 8 + 10 + "s";
+            heart.style.fontSize = size + "px";
+            heart.style.left = Math.random() * 100 + "%";
+            heart.style.animationDuration = Math.random() * 8 + 10 + "s";
         }
     </script>
 </body>
